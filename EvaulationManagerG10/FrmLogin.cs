@@ -12,6 +12,8 @@ namespace EvaulationManagerG10
 {
     public partial class frmLogin : Form
     {
+        string username = "nastavnik";
+        string password = "test";
         public frmLogin()
         {
             InitializeComponent();
@@ -25,6 +27,14 @@ namespace EvaulationManagerG10
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            if (txtUsername.Text == "")
+            {
+                MessageBox.Show("Korisničko ime nije unešeno", "Problem", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
