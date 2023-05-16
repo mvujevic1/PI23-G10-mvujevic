@@ -12,7 +12,7 @@ namespace Evaluation_Manager.Models
         public static Activity GetActivity(int iD)
         {
             Activity activity = null;
-            string sql = $"SELECT * FROM Activites WHERE Id ={id}";
+            string sql = $"SELECT * FROM Activites WHERE Id ={iD}";
             DB.OpenConnection();
             var reader= DB.GetDataReader(sql);
             if (reader.HasRows)
@@ -26,25 +26,25 @@ namespace Evaluation_Manager.Models
         }
         public static List<Activity> GetActivities()
         {
-            Activity =new List<Activity>(); 
+            List<Activity> Aktivnosti =new List<Activity>(); 
 
-            return Activity;
+            return Aktivnosti;
 
-            string sql= "Select * FROM activities"
-                DB.OpenConnection
+            string sql = "Select * FROM activities";
+            DB.OpenConnection();
                 var reader= DB.GetDataReader(sql);
-            while(reader.read)
+            while(reader.Read())
             {
                 Activity activity = CreateObject(reader);
-                activites.add(activity);
+                Aktivnosti.Add(activity);
 
             }
-            reader.close();
-            DB.CloseConnection
+            reader.Close();
+            DB.CloseConnection();
         }
         private static Activity CreateObject(System.Data.SqlClient.SqlDataReader reader)
         {
-            int iD= int.Parse(reader["iD"].ToString())
+            int iD = int.Parse(reader["iD"].ToString());
             string name= reader["Name"].ToString();
             string description= reader["Description"].ToString();
             int maxpoints= int.Parse(reader["MaxPoints"].ToString());
