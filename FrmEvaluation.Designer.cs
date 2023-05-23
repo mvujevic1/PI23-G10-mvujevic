@@ -200,7 +200,7 @@ namespace Evaluation_Manager
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "FrmEvaluation";
-            this.Text = "FrmEvaluation";
+            this.Text = "s";
             this.Load += new System.EventHandler(this.FrmEvaluation_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numPoints)).EndInit();
             this.ResumeLayout(false);
